@@ -1,0 +1,5 @@
+*.docx
+*.xlsx
+~$*
+.claude/
+_tmp_preview/

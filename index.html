@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Defensa del caso — Cuota de alimentos</title>
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="hero">
+  <p class="hero__eyebrow">Documento de trabajo — Defensa legal</p>
+  <h1>Defensa frente a la demanda por cuota de alimentos</h1>
+  <p id="caseSubtitle">Cargando...</p>
+
+  <div class="legend">
+    <span class="legend__chip"><span class="legend__dot" style="background:#d62839"></span> Rojo — No pago</span>
+    <span class="legend__chip"><span class="legend__dot" style="background:#c2255c"></span> Fucsia — Duda / sin soporte</span>
+    <span class="legend__chip"><span class="legend__dot" style="background:#e8b400"></span> Amarillo — Pagado</span>
+    <span class="legend__chip"><span class="legend__dot" style="background:#1d72b8"></span> Azul — Dinero a favor</span>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab-btn is-active" data-tab="balance">Balance</button>
+  <button class="tab-btn" data-tab="tiempo">Línea de tiempo mensual</button>
+  <button class="tab-btn" data-tab="colegio">Colegio y mudas</button>
+  <button class="tab-btn" data-tab="estudio">Negación derecho a estudio</button>
+  <button class="tab-btn" data-tab="violencia">Violencia</button>
+  <button class="tab-btn" data-tab="amenazas">Amenazas</button>
+  <button class="tab-btn" data-tab="fotografias">Fotografías</button>
+  <button class="tab-btn" data-tab="comprobantes">Comprobantes</button>
+</nav>
+
+<main>
+
+  <section class="tab-panel is-active" id="panel-balance">
+    <h2>Balance general</h2>
+    <p class="section-hint">Lo que la contraparte reclama frente a lo que el cliente ya pagó o puede acreditar. El saldo es una cifra de trabajo, no una conclusión legal definitiva.</p>
+    <div class="kpis" id="balanceCards"></div>
+    <div class="note-box" id="balanceNota"></div>
+
+    <h3 class="subsection-title">Resumen de cobros por mes</h3>
+    <p class="section-hint">Más reciente arriba. La columna "Acumulado" muestra el total que se va sumando desde julio 2025.</p>
+    <div id="summaryTable"></div>
+
+    <div class="chart-card chart-card--full">
+      <h3>Cobro acumulado · Pagos acumulados · Saldo pendiente</h3>
+      <canvas id="chartPrincipal"></canvas>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="panel-tiempo">
+    <h2>Línea de tiempo mensual</h2>
+    <p class="section-hint">Más reciente arriba. Cada mes muestra lo que se cobró (rojo) y lo que se pagó con soporte (verde).</p>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <section class="tab-panel" id="panel-colegio">
+    <h2>Colegio y mudas de ropa</h2>
+
+    <h3 class="subsection-title">Gastos de colegio pagados por el cliente (crédito a su favor)</h3>
+    <p class="section-hint">No están incluidos en el total oficial de $8.300.300 — son un crédito adicional que el cliente puede reclamar.</p>
+    <div id="gastosColegioPagados"></div>
+
+    <h3 class="subsection-title">Gastos de colegio no pagados por la contraparte</h3>
+    <p class="section-hint">El cliente entregará esta información más adelante.</p>
+    <div id="gastosColegioPendientes"></div>
+  </section>
+
+  <section class="tab-panel" id="panel-estudio">
+    <h2>Negación del derecho al estudio</h2>
+    <p class="section-hint">Soportes de que la contraparte no está llevando al menor al colegio.</p>
+    <div id="negacionEstudio"></div>
+  </section>
+
+  <section class="tab-panel" id="panel-violencia">
+    <h2>Violencia</h2>
+    <p class="section-hint">Soportes de insultos de la contraparte hacia la pareja actual del cliente.</p>
+    <div id="violenciaList"></div>
+  </section>
+
+  <section class="tab-panel" id="panel-amenazas">
+    <h2>Amenazas</h2>
+    <p class="section-hint">Soportes de amenazas de la contraparte hacia el cliente.</p>
+    <div id="amenazasList"></div>
+  </section>
+
+  <section class="tab-panel" id="panel-fotografias">
+    <h2>Fotografías</h2>
+    <p class="section-hint">Las fotos se muestran en orden cronológico. Agrega cada una con su fecha y descripción en <code>data.js</code> dentro del arreglo <code>FOTOGRAFIAS</code>.</p>
+    <div id="fotosGallery"></div>
+  </section>
+
+  <section class="tab-panel" id="panel-comprobantes">
+    <h2>Comprobantes</h2>
+    <p class="section-hint">Las imágenes están incluidas a partir del documento original. Cuando se reciban los enlaces de Google Drive, se anclarán aquí mismo para consulta directa.</p>
+    <div class="evidence-gallery" id="evidenceGallery"></div>
+  </section>
+
+</main>
+
+<footer>
+  Documento de uso interno para la preparación de la defensa. No distribuir fuera del equipo del caso.
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" data-close-lightbox aria-label="Cerrar">&times;</button>
+  <figure class="lightbox__content">
+    <img id="lightboxImg" src="" alt="" />
+    <figcaption id="lightboxCaption"></figcaption>
+  </figure>
+</div>
+
+<script src="assets/js/vendor/chart.umd.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
