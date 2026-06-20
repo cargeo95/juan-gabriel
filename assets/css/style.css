@@ -196,7 +196,7 @@ section h2 {
 
 .charts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
   gap: 20px;
 }
 .charts-grid--secondary { margin-bottom: 28px; }
@@ -445,7 +445,50 @@ footer {
   border-top: 1px solid var(--line);
 }
 
+/* ================================================================ RESPONSIVE */
+@media (max-width: 768px) {
+  /* Charts: una por fila en tablet */
+  .charts-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 640px) {
-  .month-card { gap: 8px; }
-  .month-card__body { padding: 14px; }
+  /* Hero */
+  .hero { padding: 20px 16px 18px; }
+  .hero h1 { font-size: 1.3rem; }
+
+  /* Tabs: reducir padding lateral */
+  .tabs { padding: 0 8px; }
+  .tab-btn { padding: 12px 10px; font-size: .8rem; }
+
+  /* Main */
+  main { padding: 20px 12px 60px; }
+
+  /* KPIs: una columna */
+  .kpis { grid-template-columns: 1fr; }
+
+  /* Tarjetas del timeline */
+  .month-card { gap: 6px; }
+  .month-card__rail { display: none; }   /* ocultar riel para ganar espacio */
+  .month-card__body { padding: 12px; }
+  .month-card__header h3 { font-size: .95rem; }
+
+  /* Tabla interna del timeline: ajustar columnas */
+  .tl-desc  { width: auto; padding: 8px 8px; font-size: .88rem; }
+  .tl-cobro { width: auto; padding: 8px 8px; font-size: .85rem; }
+  .tl-pago  { width: auto; padding: 8px 8px; font-size: .85rem; }
+  .tl-empty { padding: 8px 8px; }
+  .tl-nota  { font-size: .78rem; }
+  .tl-total-label,
+  .tl-total-cobro,
+  .tl-total-pago { padding: 8px 8px; font-size: .85rem; }
+
+  /* Galería de evidencia y fotos */
+  .evidence-gallery { grid-template-columns: 1fr 1fr; }
+  .foto-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Info cards */
+  .info-grid { grid-template-columns: 1fr; }
+
+  /* Sección hint */
+  .section-hint { font-size: .84rem; }
 }
