@@ -38,7 +38,9 @@ const MESES = [
     year: 2025, month: "Julio", clave: "2025-07",
     items: [
       { concepto: "Acuerdo deuda", valor: 290000, status: "no-pago" },
-      { concepto: "Cuota de alimentos", valor: 390000, status: "no-pago" },
+      { concepto: "Cuota de alimentos", valor: 390000, status: "no-pago",
+        pagoMostrado: 390000,
+        nota: "Saldo a favor — el dinero fue utilizado este mes." },
       { concepto: "Materiales del colegio", valor: 88100, status: "duda",
         nota: "Se solicita la factura de estos materiales, ya que no se mostró ni compartió evidencia de lo comprado para el menor. Se solicita el soporte para proceder con el pago del 50% acordado." },
       { concepto: "Muda de ropa", valor: 250000, status: "no-pago",
