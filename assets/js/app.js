@@ -499,7 +499,6 @@ function renderHeader() {
     `${CASO.cliente} — Defensa frente a reclamación de cuota de alimentos del menor ${CASO.menor} (contraparte: ${CASO.contraparte}). Corte: ${CASO.corte}.`;
 }
 
-renderHeader();
 setupTabs();
 renderBalance();
 renderSummaryTable();
